@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello</h1>
+<p>this is a template</p>
+<p>{{my_number}}</p>
+<ul>
+{% for my_each_item in my_list %}
+	<li>{{my_each_item}}</li>
+{% endfor %}
+</ul>
+{% endblock %}
