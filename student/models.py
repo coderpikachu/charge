@@ -7,7 +7,7 @@ class Student(models.Model):
 		(Female,'Female'),
 	]
 
-	sid = models.CharField(max_length=20)
+	sId = models.CharField(max_length=20)
 	name = models.CharField(max_length=100)
 	gender=models.CharField(
 		max_length=2,

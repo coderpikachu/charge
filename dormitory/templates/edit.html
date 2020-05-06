@@ -7,74 +7,50 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/stu">  
+<form method="POST" class="post-form" action="/update/{{dormitory.id}}">  
         {% csrf_token %}  
     <div class="container">  
 <br>  
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  
-    <h3>Enter Details</h3>  
+    <h3>Update Details</h3>  
     </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Id:</label>  
     <div class="col-sm-4">  
-      {{ form.sId }}  
+        <input type="integer" name="dId" id="id_dId" required maxlength="20" value="{{ dormitory.dId }}"/>  
     </div>  
   </div>  
   <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Name:</label>  
+    <label class="col-sm-2 col-form-label">PeopleNum:</label>  
     <div class="col-sm-4">  
-      {{ form.name }}  
+        <input type="integer" name="peopleNum" id="id_peopleNum" required maxlength="100" value="{{ dormitory.peopleNum }}" />  
     </div>  
   </div>  
     <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Gender:</label>  
+    <label class="col-sm-2 col-form-label">AccommodationCharge:</label>  
     <div class="col-sm-4">  
-      {{ form.gender }}  
+        <input type="decimal" name="accommodationCharge" id="id_accommodationCharge" required maxlength="254" value="{{ dormitory.accommodationCharge }}" />  
     </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Nation:</label>  
-    <div class="col-sm-4">  
-      {{ form.nation }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Specialty:</label>  
-    <div class="col-sm-4">  
-      {{ form.specialty }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">ClassId:</label>  
-    <div class="col-sm-4">  
-      {{ form.classId }}  
-    </div> 
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Telephone:</label>  
     <div class="col-sm-4">  
-      {{ form.telephone }}  
-    </div> 
-  </div>  
+        <input type="text" name="telephone" id="id_telephone" required maxlength="15" value="{{ dormitory.telephone }}" />  
+    </div>  
+  </div> 
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">FlatId:</label>  
     <div class="col-sm-4">  
-      {{ form.flatId }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">DormitoryId:</label>  
-    <div class="col-sm-4">  
-      {{ form.dormitoryId }}  
-    </div> 
+        <input type="text" name="flatId" id="id_flatId" required maxlength="15" value="{{ dormitory.flatId }}" />  
+    </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  
-    <button type="submit" class="btn btn-primary">Submit</button>  
+    <button type="submit" class="btn btn-success">Update</button>  
     </div>  
   </div>  
     </div>  

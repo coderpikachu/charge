@@ -1,0 +1,40 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Dormitory Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID</th>  
+        <th>PeopleNum</th>  
+        <th>AccommodationCharge</th>  
+        <th>Telephone</th>  
+        <th>FlatId</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for dormi in dormitories %}  
+    <tr>  
+        <td>{{ dormi.dId }}</td>  
+        <td>{{ dormi.peopleNum }}</td>  
+        <td>{{ dormi.accommodationCharge }}</td>  
+        <td>{{ dormi.telephone }}</td>  
+        <td>{{ dormi.flatId }}</td>
+        <td>  
+            <a href="/edit/{{ dormi.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ dormi.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/dormi" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  

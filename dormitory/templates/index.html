@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/stu">  
+<form method="POST" class="post-form" action="/dormi">  
         {% csrf_token %}  
     <div class="container">  
 <br>  
@@ -20,56 +20,31 @@
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Id:</label>  
     <div class="col-sm-4">  
-      {{ form.sId }}  
+      {{ form.dId }}  
     </div>  
   </div>  
   <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Name:</label>  
+    <label class="col-sm-2 col-form-label">PeopleNum:</label>  
     <div class="col-sm-4">  
-      {{ form.name }}  
+      {{ form.peopleNum }}  
     </div>  
   </div>  
     <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Gender:</label>  
+    <label class="col-sm-2 col-form-label">AccommodationCharge:</label>  
     <div class="col-sm-4">  
-      {{ form.gender }}  
+      {{ form.accommodationCharge }}  
     </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Nation:</label>  
-    <div class="col-sm-4">  
-      {{ form.nation }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Specialty:</label>  
-    <div class="col-sm-4">  
-      {{ form.specialty }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">ClassId:</label>  
-    <div class="col-sm-4">  
-      {{ form.classId }}  
-    </div> 
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Telephone:</label>  
     <div class="col-sm-4">  
       {{ form.telephone }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
+    </div>  
+  <div class="form-group row">  
     <label class="col-sm-2 col-form-label">FlatId:</label>  
     <div class="col-sm-4">  
       {{ form.flatId }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">DormitoryId:</label>  
-    <div class="col-sm-4">  
-      {{ form.dormitoryId }}  
-    </div> 
+    </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  

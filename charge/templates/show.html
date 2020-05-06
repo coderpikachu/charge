@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Charge Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID</th>  
+        <th>FlatId</th>  
+        <th>DormitoryId</th>  
+        <th>ChargeDate</th>  
+        <th>ChargeType</th>  
+        <th>Money</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for cha in charges %}  
+    <tr>  
+        <td>{{ cha.cId }}</td>  
+        <td>{{ cha.flatId }}</td>  
+        <td>{{ cha.dormitoryId }}</td>  
+        <td>{{ cha.chargeDate }}</td>  
+        <td>{{ cha.chargeType }}</td>
+        <td>{{ cha.money }}</td>
+        <td>  
+            <a href="/edit/{{ cha.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ cha.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/cha" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  

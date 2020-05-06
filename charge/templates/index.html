@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/stu">  
+<form method="POST" class="post-form" action="/cha">  
         {% csrf_token %}  
     <div class="container">  
 <br>  
@@ -20,57 +20,39 @@
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Id:</label>  
     <div class="col-sm-4">  
-      {{ form.sId }}  
+      {{ form.cId }}  
     </div>  
   </div>  
   <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Name:</label>  
-    <div class="col-sm-4">  
-      {{ form.name }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Gender:</label>  
-    <div class="col-sm-4">  
-      {{ form.gender }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Nation:</label>  
-    <div class="col-sm-4">  
-      {{ form.nation }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Specialty:</label>  
-    <div class="col-sm-4">  
-      {{ form.specialty }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">ClassId:</label>  
-    <div class="col-sm-4">  
-      {{ form.classId }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Telephone:</label>  
-    <div class="col-sm-4">  
-      {{ form.telephone }}  
-    </div> 
-  </div>  
-    <div class="form-group row">  
     <label class="col-sm-2 col-form-label">FlatId:</label>  
     <div class="col-sm-4">  
       {{ form.flatId }}  
-    </div> 
+    </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">DormitoryId:</label>  
     <div class="col-sm-4">  
       {{ form.dormitoryId }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">ChargeDate:</label>  
+    <div class="col-sm-4">  
+      {{ form.chargeDate }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">ChargeType:</label>  
+    <div class="col-sm-4">  
+      {{ form.chargeType }}  
     </div> 
   </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Money:</label>  
+    <div class="col-sm-4">  
+      {{ form.money }}  
+    </div> 
+  </div>   
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  

@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Flat Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Flat ID</th>  
+        <th>Flat Layers</th>  
+        <th>Flat roomNum</th>  
+        <th>Flat openTime</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for fl in flats %}  
+    <tr>  
+        <td>{{ fl.fId }}</td>  
+        <td>{{ fl.layers }}</td>  
+        <td>{{ fl.roomNum }}</td>  
+        <td>{{ fl.openTime }}</td>  
+        <td>  
+            <a href="/edit/{{ fl.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ fl.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/fl" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  

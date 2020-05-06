@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='Student',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sid', models.CharField(max_length=20)),
+                ('sId', models.CharField(max_length=20)),
                 ('name', models.CharField(max_length=100)),
                 ('gender', models.CharField(choices=[('M', 'Male'), ('F', 'Female')], default='M', max_length=2)),
                 ('nation', models.CharField(max_length=100)),
