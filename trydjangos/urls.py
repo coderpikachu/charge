@@ -1,11 +1,9 @@
 from django.contrib import admin  
-from django.urls import path  
-from student import views  
+from django.urls import path,include
 urlpatterns = [  
-    path('admin/', admin.site.urls),  
-    path('stu', views.stu),  
-    path('show',views.show),  
-    path('edit/<int:id>', views.edit),  
-    path('update/<int:id>', views.update),  
-    path('delete/<int:id>', views.destroy),  
+    path('admin/', admin.site.urls),    
+    path('student/',include('student.urls')),
+    path('charge/',include('charge.urls')),
+    path('flat/',include('flat.urls')),
+    path('dormitory/',include('dormitory.urls'))
 ]  

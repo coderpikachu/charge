@@ -7,50 +7,49 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/update/{{dormitory.id}}">  
+<form method="POST" class="post-form" action="/dormitory/dor">  
         {% csrf_token %}  
     <div class="container">  
 <br>  
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  
-    <h3>Update Details</h3>  
+    <h3>Enter Details</h3>  
     </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Id:</label>  
     <div class="col-sm-4">  
-        <input type="integer" name="dId" id="id_dId" required maxlength="20" value="{{ dormitory.dId }}"/>  
+      {{ form.dId }}  
     </div>  
   </div>  
   <div class="form-group row">  
     <label class="col-sm-2 col-form-label">PeopleNum:</label>  
     <div class="col-sm-4">  
-        <input type="integer" name="peopleNum" id="id_peopleNum" required maxlength="100" value="{{ dormitory.peopleNum }}" />  
+      {{ form.peopleNum }}  
     </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">AccommodationCharge:</label>  
     <div class="col-sm-4">  
-        <input type="decimal" name="accommodationCharge" id="id_accommodationCharge" required maxlength="254" value="{{ dormitory.accommodationCharge }}" />  
+      {{ form.accommodationCharge }}  
     </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Telephone:</label>  
     <div class="col-sm-4">  
-        <input type="text" name="telephone" id="id_telephone" required maxlength="15" value="{{ dormitory.telephone }}" />  
+      {{ form.telephone }}  
     </div>  
-  </div> 
-    <div class="form-group row">  
+  <div class="form-group row">  
     <label class="col-sm-2 col-form-label">FlatId:</label>  
     <div class="col-sm-4">  
-        <input type="text" name="flatId" id="id_flatId" required maxlength="15" value="{{ dormitory.flatId }}" />  
+      {{ form.flatId }}  
     </div>  
   </div>  
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  
-    <button type="submit" class="btn btn-success">Update</button>  
+    <button type="submit" class="btn btn-primary">Submit</button>  
     </div>  
   </div>  
     </div>  

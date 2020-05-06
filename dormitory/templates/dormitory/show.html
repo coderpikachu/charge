@@ -26,8 +26,8 @@
         <td>{{ dormi.telephone }}</td>  
         <td>{{ dormi.flatId }}</td>
         <td>  
-            <a href="/edit/{{ dormi.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{{ dormi.id }}">Delete</a>  
+            <a href="/dormitory/edit/{{ dormi.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/dormitory/delete/{{ dormi.id }}">Delete</a>  
         </td>  
     </tr>  
 {% endfor %}  
@@ -35,6 +35,6 @@
 </table>  
 <br>  
 <br>  
-<center><a href="/dormi" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="/dormitory/dor" class="btn btn-primary">Add New Record</a></center>  
 </body>  
 </html>  

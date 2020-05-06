@@ -8,26 +8,26 @@ def fl(request):
         if form.is_valid():  
             try:  
                 form.save()  
-                return redirect('/show')  
+                return redirect('/flat/show')  
             except:  
                 pass  
     else:  
         form = FlatForm()  
-    return render(request,'index.html',{'form':form})  
+    return render(request,'flat/index.html',{'form':form})  
 def show(request):  
     flats = Flat.objects.all()  
-    return render(request,"show.html",{'flats':flats})  
+    return render(request,"flat/show.html",{'flats':flats})  
 def edit(request, id):  
     flat = Flat.objects.get(id=id)  
-    return render(request,'edit.html', {'flat':flat})  
+    return render(request,'flat/edit.html', {'flat':flat})  
 def update(request, id):  
     flat = Flat.objects.get(id=id)  
     form = FlatForm(request.POST, instance = flat)  
     if form.is_valid():  
         form.save()  
-        return redirect("/show")  
-    return render(request, 'edit.html', {'flat': flat})  
+        return redirect("/flat/show")  
+    return render(request, 'flat/edit.html', {'flat': flat})  
 def destroy(request, id):  
     flat = Flat.objects.get(id=id)  
     flat.delete()  
-    return redirect("/show")  
+    return redirect("/flat/show")  

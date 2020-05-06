@@ -1,3 +1,5 @@
+from flat.models import Flat
+from dormitory.models import Dormitory
 from django.db import models  
 class Student(models.Model): 	
 	Male='M'
@@ -18,7 +20,7 @@ class Student(models.Model):
 	specialty=models.CharField(max_length=100)
 	classId=models.IntegerField()
 	telephone=models.CharField(max_length=100)
-	flatId=models.IntegerField()
-	dormitoryId=models.IntegerField()
+	flatId=models.ForeignKey(Flat,on_delete=models.CASCADE)
+	dormitoryId=models.ForeignKey(Dormitory,on_delete=models.CASCADE)
 	class Meta:  
 		db_table = "student"

@@ -10,15 +10,15 @@
 <table class="table table-striped table-bordered table-sm">  
     <thead class="thead-dark">  
     <tr>  
-        <th>Student ID</th>  
-        <th>Student Name</th>  
-        <th>Student Gender</th>  
-        <th>Student Nation</th>  
-        <th>Student Specialty</th>  
-        <th>Student ClassId</th>  
-        <th>Student Telephone</th>  
-        <th>Student FlatId</th>  
-        <th>Student DormitoryId</th>  
+        <th>ID</th>  
+        <th>Name</th>  
+        <th>Gender</th>  
+        <th>Nation</th>  
+        <th>Specialty</th>  
+        <th>ClassId</th>  
+        <th>Telephone</th>  
+        <th>FlatId</th>  
+        <th>DormitoryId</th>  
     </tr>  
     </thead>  
     <tbody>  
@@ -34,8 +34,8 @@
         <td>{{ stu.flatId }}</td>
         <td>{{ stu.dormitoryId }}</td>
         <td>  
-            <a href="/edit/{{ stu.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{{ stu.id }}">Delete</a>  
+            <a href="/student/edit/{{ stu.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/student/delete/{{ stu.id }}">Delete</a>  
         </td>  
     </tr>  
 {% endfor %}  
@@ -43,6 +43,6 @@
 </table>  
 <br>  
 <br>  
-<center><a href="/stu" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="/student/st" class="btn btn-primary">Add New Record</a></center>  
 </body>  
 </html>  

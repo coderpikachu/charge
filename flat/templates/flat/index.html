@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/dormi">  
+<form method="POST" class="post-form" action="/flat/fl">  
         {% csrf_token %}  
     <div class="container">  
 <br>  
@@ -20,30 +20,25 @@
     <div class="form-group row">  
     <label class="col-sm-2 col-form-label">Id:</label>  
     <div class="col-sm-4">  
-      {{ form.dId }}  
+      {{ form.fId }}  
     </div>  
   </div>  
   <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">PeopleNum:</label>  
+    <label class="col-sm-2 col-form-label">Layers:</label>  
     <div class="col-sm-4">  
-      {{ form.peopleNum }}  
+      {{ form.layers }}  
     </div>  
   </div>  
     <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">AccommodationCharge:</label>  
+    <label class="col-sm-2 col-form-label">RoomNum:</label>  
     <div class="col-sm-4">  
-      {{ form.accommodationCharge }}  
+      {{ form.roomNum }}  
     </div>  
   </div>  
     <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Telephone:</label>  
+    <label class="col-sm-2 col-form-label">OpenTime:</label>  
     <div class="col-sm-4">  
-      {{ form.telephone }}  
-    </div>  
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">FlatId:</label>  
-    <div class="col-sm-4">  
-      {{ form.flatId }}  
+      {{ form.openTime }}  
     </div>  
   </div>  
     <div class="form-group row">  

@@ -1,4 +1,6 @@
 from django.db import models  
+from flat.models import Flat
+from dormitory.models import Dormitory
 class Charge(models.Model): 	
 	Water='W'
 	Food='F'
@@ -16,8 +18,8 @@ class Charge(models.Model):
 		default=Water,
     )
 	cId=models.IntegerField()
-	flatId=models.IntegerField()
-	dormitoryId=models.IntegerField()
+	flatId=models.ForeignKey(Flat,on_delete=models.CASCADE)
+	dormitoryId=models.ForeignKey(Dormitory,on_delete=models.CASCADE)
 	chargeDate=models.DateField()
 	
 	money=models.DecimalField(decimal_places=2,max_digits=10)

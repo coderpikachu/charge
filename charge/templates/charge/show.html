@@ -28,8 +28,8 @@
         <td>{{ cha.chargeType }}</td>
         <td>{{ cha.money }}</td>
         <td>  
-            <a href="/edit/{{ cha.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{{ cha.id }}">Delete</a>  
+            <a href="/charge/edit/{{ cha.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/charge/delete/{{ cha.id }}">Delete</a>  
         </td>  
     </tr>  
 {% endfor %}  
@@ -37,6 +37,6 @@
 </table>  
 <br>  
 <br>  
-<center><a href="/cha" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="/charge/ch" class="btn btn-primary">Add New Record</a></center>  
 </body>  
 </html>  

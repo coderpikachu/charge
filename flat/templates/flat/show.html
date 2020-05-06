@@ -17,15 +17,15 @@
     </tr>  
     </thead>  
     <tbody>  
-{% for fl in flats %}  
+{% for fla in flats %}  
     <tr>  
-        <td>{{ fl.fId }}</td>  
-        <td>{{ fl.layers }}</td>  
-        <td>{{ fl.roomNum }}</td>  
-        <td>{{ fl.openTime }}</td>  
+        <td>{{ fla.fId }}</td>  
+        <td>{{ fla.layers }}</td>  
+        <td>{{ fla.roomNum }}</td>  
+        <td>{{ fla.openTime }}</td>  
         <td>  
-            <a href="/edit/{{ fl.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{{ fl.id }}">Delete</a>  
+            <a href="/flat/edit/{{ fla.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/flat/delete/{{ fla.id }}">Delete</a>  
         </td>  
     </tr>  
 {% endfor %}  
@@ -33,6 +33,6 @@
 </table>  
 <br>  
 <br>  
-<center><a href="/fl" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="/flat/fl" class="btn btn-primary">Add New Record</a></center>  
 </body>  
 </html>  
