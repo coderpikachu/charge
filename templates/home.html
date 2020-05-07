@@ -1,12 +1,17 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>Hello</h1>
-<p>this is a template</p>
-<p>{{my_number}}</p>
-<ul>
-{% for my_each_item in my_list %}
-	<li>{{my_each_item}}</li>
-{% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Navigation</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<br>  
+<br>  
+<center><a href="/student/show" class="btn btn-primary">Student</a></center>  
+<center><a href="/flat/show" class="btn btn-primary">Flat</a></center>  
+<center><a href="/dormitory/show" class="btn btn-primary">Dormitory</a></center>  
+<center><a href="/charge/show" class="btn btn-primary">Charge</a></center>  
+</body>  
+</html>  
