@@ -1,25 +1,32 @@
 from dormitory.models import Dormitory
 from django.db import models  
+from student.models import Student
 class User(models.Model): 	
-	Male='M'
-	Female='F'
-	genderChoices=[	
-		(Male,'Male'),
-		(Female,'Female'),
+	Super='S'
+	Admin='F'
+	Common='C'
+	userChoices=[	
+		(Super,'S'),
+		(Admin,'A'),
+		(Common,'C'),
 	]
-
-	sId = models.CharField(max_length=20)
-	name = models.CharField(max_length=100)
-	gender=models.CharField(
+	uId=models.OneToOneField(
+		Student,
+		on_delete=models.CASCADE
+		)
+	name=models.CharField(max_length=100)
+	pwd=models.CharField(max_length=100)
+	types=models.CharField(
 		max_length=2,
-		choices=genderChoices,
-		default=Male,
-    )
-	nation=models.CharField(max_length=100)
-	specialty=models.CharField(max_length=100)
-	classId=models.IntegerField()
-	telephone=models.CharField(max_length=100)
-	flatId=models.ForeignKey(Flat,on_delete=models.CASCADE)
-	dormitoryId=models.ForeignKey(Dormitory,on_delete=models.CASCADE)
+		choices=userChoices,
+		default=Common,
+		)
+	# authority=[
+	# 'student':[
+	# 	'search':True,
+	# 	'add':True,
+	# 	'modify'
+	# ]
+	# ]
 	class Meta:  
-		db_table = "student"
+		db_table = "user"

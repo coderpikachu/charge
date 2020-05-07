@@ -7,5 +7,6 @@ urlpatterns = [
     path('student/',include('student.urls')),
     path('charge/',include('charge.urls')),
     path('flat/',include('flat.urls')),
-    path('dormitory/',include('dormitory.urls'))
+    path('dormitory/',include('dormitory.urls')),
+    path('user/',include('user.urls'))
 ]  

@@ -14,20 +14,20 @@ def st(request):
                 pass  
     else:  
         form = StudentForm()  
-    return render(request,"index.html",{'form':form})  
+    return render(request,"student/index.html",{'form':form})  
 def show(request):  
     students = Student.objects.all()  
-    return render(request,"show.html",{'students':students})  
+    return render(request,"student/show.html",{'students':students})  
 def edit(request, id):  
     student = Student.objects.get(id=id)  
-    return render(request,'edit.html', {'student':student})  
+    return render(request,'student/edit.html', {'student':student})  
 def update(request, id):  
     student = Student.objects.get(id=id)  
     form = StudentForm(request.POST, instance = student)  
     if form.is_valid():  
         form.save()  
         return redirect("/student/show")  
-    return render(request, 'edit.html', {'student': student})  
+    return render(request, 'student/edit.html', {'student': student})  
 def destroy(request, id):  
     student = Student.objects.get(id=id)  
     student.delete()  
