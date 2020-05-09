@@ -1,23 +1,21 @@
 from dormitory.models import Dormitory
 from django.db import models  
-from student.models import Student
 class User(models.Model): 	
 	Super='S'
-	Admin='F'
+	Admin='A'
 	Common='C'
 	userChoices=[	
-		(Super,'S'),
-		(Admin,'A'),
-		(Common,'C'),
+		(Super,'Super'),
+		(Admin,'Admin'),
+		(Common,'Common'),
 	]
-	uId=models.OneToOneField(
-		Student,
-		on_delete=models.CASCADE
+	uId=models.CharField(
+		max_length=100,
 		)
 	name=models.CharField(max_length=100)
 	pwd=models.CharField(max_length=100)
 	types=models.CharField(
-		max_length=2,
+		max_length=3,
 		choices=userChoices,
 		default=Common,
 		)

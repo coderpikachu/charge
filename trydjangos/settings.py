@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'student',
     'dormitory',
     'flat',
-    'charge',
-    'user'
+    'charges',
+    'user',
+    'pages'
 ]
 
 MIDDLEWARE = [

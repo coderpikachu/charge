@@ -1,6 +1,7 @@
 from flat.models import Flat
 from dormitory.models import Dormitory
 from django.db import models  
+from user.models import User
 class Student(models.Model): 	
 	Male='M'
 	Female='F'
@@ -9,7 +10,7 @@ class Student(models.Model):
 		(Female,'Female'),
 	]
 
-	sId = models.CharField(max_length=20)
+	sId = models.ForeignKey(User,on_delete=models.CASCADE)
 	name = models.CharField(max_length=100)
 	gender=models.CharField(
 		max_length=2,
