@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'flat',
     'charges',
     'user',
-    'pages'
+    'pages',
+    'django_mysql'
 ]
 
 MIDDLEWARE = [
@@ -91,14 +92,20 @@ WSGI_APPLICATION = 'trydjangos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sample',
+        'NAME': 'test1',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'SWBswb1436001',
         'OPTIONS': {
+            'charset':'utf8mb4',
               "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",                                                              
-          }
+        },
+        'TEST':{
+            'CHARSET':'utf8mb4',
+            'COLLATION':'utf8mb4_unicode_ci',
+        }
+
     }
 }
 

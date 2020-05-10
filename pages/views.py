@@ -28,7 +28,7 @@ def logIn_view(request,*args,**kwargs):
                 my_id=form.cleaned_data['uId']
                 my_pwd=form.cleaned_data['pwd']
                 print(f"{my_id}/{my_pwd}/home/")
-                if User.objects.filter(id=my_id,pwd=my_pwd).count()>=1:
+                if User.objects.filter(uId=my_id,pwd=my_pwd).count()>=1:
                     return redirect(f"{my_id}/{my_pwd}/home/")  
 
             except:  

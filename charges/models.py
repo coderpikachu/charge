@@ -19,7 +19,7 @@ class Charges(models.Model):
 		choices=chargeChoices,
 		default=Water,
     )
-	cId=models.IntegerField()
+	cId=models.CharField(max_length=100,primary_key=True)
 	flatId=models.ForeignKey(Flat,on_delete=models.CASCADE)
 	dormitoryId=models.ForeignKey(Dormitory,on_delete=models.CASCADE)
 	chargeDate=models.DateField()

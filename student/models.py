@@ -10,7 +10,7 @@ class Student(models.Model):
 		(Female,'Female'),
 	]
 
-	sId = models.ForeignKey(User,on_delete=models.CASCADE)
+	sId = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
 	name = models.CharField(max_length=100)
 	gender=models.CharField(
 		max_length=2,

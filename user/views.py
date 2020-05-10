@@ -2,6 +2,13 @@ from django.shortcuts import render, redirect
 from user.forms import UserForm  
 from user.models import User  
 from django.urls import reverse
+from django.views.generic import(
+    CreateView,
+    DetailView,
+    ListView,
+    UpdateView,
+    DeleteView
+    )
 # Create your views here.  
 def u(request):  
     if request.method == "POST":  

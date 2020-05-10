@@ -9,43 +9,7 @@
 <body>  
 <form method="POST" class="post-form" action="/dormitory/dor">  
         {% csrf_token %}  
-    <div class="container">  
-<br>  
-    <div class="form-group row">  
-    <label class="col-sm-1 col-form-label"></label>  
-    <div class="col-sm-4">  
-    <h3>Enter Details</h3>  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Id:</label>  
-    <div class="col-sm-4">  
-      {{ form.dId }}  
-    </div>  
-  </div>  
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">PeopleNum:</label>  
-    <div class="col-sm-4">  
-      {{ form.peopleNum }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">AccommodationCharge:</label>  
-    <div class="col-sm-4">  
-      {{ form.accommodationCharge }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Telephone:</label>  
-    <div class="col-sm-4">  
-      {{ form.telephone }}  
-    </div>  
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">FlatId:</label>  
-    <div class="col-sm-4">  
-      {{ form.flatId }}  
-    </div>  
-  </div>  
+    {{form.as_p}}
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  

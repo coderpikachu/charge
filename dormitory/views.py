@@ -1,12 +1,31 @@
 from django.shortcuts import render, redirect  
 from dormitory.forms import DormitoryForm  
 from dormitory.models import Dormitory  
+from django.views.generic import(
+    CreateView,
+    DetailView,
+    ListView,
+    UpdateView,
+    DeleteView
+    )
 # Create your views here.  
+class DorCreateView(CreateView):
+    template_name='dormitory/index.html'
+    form_class=DormitoryForm
+    queryset=Dormitory.objects.all()
+    success_url='/dormitory/show'
+    def form_valid(self,form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
 def dor(request):  
     if request.method == "POST":  
         form = DormitoryForm(request.POST)  
+        print(form)
+        print(1)
         if form.is_valid():  
+            print(form.cleaned_data)
             try:  
+                print(2)
                 form.save()  
                 return redirect('/dormitory/show')  
             except:  
