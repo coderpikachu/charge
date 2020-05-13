@@ -7,40 +7,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/flat/fl">  
+<form method="POST" class="post-form">  
         {% csrf_token %}  
-    <div class="container">  
-<br>  
-    <div class="form-group row">  
-    <label class="col-sm-1 col-form-label"></label>  
-    <div class="col-sm-4">  
-    <h3>Enter Details</h3>  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Id:</label>  
-    <div class="col-sm-4">  
-      {{ form.fId }}  
-    </div>  
-  </div>  
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Layers:</label>  
-    <div class="col-sm-4">  
-      {{ form.layers }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">RoomNum:</label>  
-    <div class="col-sm-4">  
-      {{ form.roomNum }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">OpenTime:</label>  
-    <div class="col-sm-4">  
-      {{ form.openTime }}  
-    </div>  
-  </div>  
+    {{form.as_p}}
+
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  

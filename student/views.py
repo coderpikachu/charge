@@ -13,7 +13,7 @@ class StuCreateView(CreateView):
     template_name='student/index.html'
     form_class=StudentForm
     queryset=Student.objects.all()
-    success_url='/student/show'
+    success_url='../student/show'
     def form_valid(self,form):
         print(form.cleaned_data)
         return super().form_valid(form)
@@ -26,7 +26,7 @@ class StuUpdateView(UpdateView):
     template_name='student/edit.html'
     form_class=StudentForm
     queryset=Student.objects.all()
-    success_url='../../'
+    success_url='../../show'
     def get_object(self):
         id_=self.kwargs.get("id")
         return get_object_or_404(Student,sId=id_)

@@ -1,33 +1,41 @@
-from django.shortcuts import render, redirect  
+from django.shortcuts import render, redirect,get_object_or_404
 from flat.forms import FlatForm  
 from flat.models import Flat  
-# Create your views here.  
-def fl(request):  
-    if request.method == "POST":  
-        form = FlatForm(request.POST)  
-        if form.is_valid():  
-            try:  
-                form.save()  
-                return redirect('/flat/show')  
-            except:  
-                pass  
-    else:  
-        form = FlatForm()  
-    return render(request,'flat/index.html',{'form':form})  
-def show(request):  
-    flats = Flat.objects.all()  
-    return render(request,"flat/show.html",{'flats':flats})  
-def edit(request, id):  
-    flat = Flat.objects.get(id=id)  
-    return render(request,'flat/edit.html', {'flat':flat})  
-def update(request, id):  
-    flat = Flat.objects.get(id=id)  
-    form = FlatForm(request.POST, instance = flat)  
-    if form.is_valid():  
-        form.save()  
-        return redirect("/flat/show")  
-    return render(request, 'flat/edit.html', {'flat': flat})  
-def destroy(request, id):  
-    flat = Flat.objects.get(id=id)  
-    flat.delete()  
-    return redirect("/flat/show")  
+from django.views.generic import(
+    CreateView,
+    DetailView,
+    ListView,
+    UpdateView,
+    DeleteView
+    )
+class Create_View(CreateView):
+    template_name='flat/index.html'
+    form_class=FlatForm
+    queryset=Flat.objects.all()
+    success_url='../../flat/show/'
+    def form_valid(self,form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+class List_View(ListView):
+    template_name='flat/show.html'
+    queryset=Flat.objects.all()
+
+class Update_View(UpdateView):
+    template_name='flat/edit.html'
+    form_class=FlatForm
+    queryset=Flat.objects.all()
+    success_url='../../show'
+    def get_object(self):
+        id_=self.kwargs.get("id")
+        return get_object_or_404(Flat,fId=id_)
+    def form_valid(self,form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+class Delete_View(DeleteView):
+    template_name='flat/delete.html'
+    success_url='../../show'
+    def get_object(self):
+        id_=self.kwargs.get("id")
+        return get_object_or_404(Flat,sId=id_)

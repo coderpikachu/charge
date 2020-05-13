@@ -1,7 +1,7 @@
 from dormitory.models import Dormitory
 from django.db.models import *
 from django_mysql.models import JSONField
-class User(Model): 	
+class User(Model):
 	Super='S'
 	Admin='A'
 	Common='C'
@@ -41,5 +41,7 @@ class User(Model):
 	user_add=BooleanField(default=True)
 	user_edit=BooleanField(default=True)
 	user_delete=BooleanField(default=True)
-	class Meta:  
+	class Meta:
 		db_table = "user"
+	def __str__(self):
+		return	self.uId

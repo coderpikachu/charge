@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'trydjangos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test1',
+        'NAME': 'test3',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',

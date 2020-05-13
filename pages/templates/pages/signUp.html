@@ -1,0 +1,67 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/signUp/">  
+        {% csrf_token %}  
+    <div class="container">  
+    <div class="jumbotron">
+<br>  
+    <div class="form-group row" style="text-align: center">  
+      <div style="padding:auto;width:1000px;">
+        <label class="col-form-label"></label>  
+        <div>  
+          <h3 class="display-4">Create Your Account</h3>  
+        </div>  
+      </div>
+    </div>  
+    <div class="form-group row" style="text-align: center">  
+      <div style="padding:auto;width:1000px;">
+        <label class="col-form-label">Id:</label>  
+        <div>  
+          {{ form.uId }}  
+        </div>  
+      </div>
+    </div>  
+  <div class="form-group row"style="text-align: center">  
+    <div style="padding:auto;width:1000px;">
+    <label class="col-form-label">Name:</label>  
+    <div>  
+      {{ form.name }}  
+    </div>  
+  </div>
+  </div>  
+  <div class="form-group row" style="text-align: center">  
+      <div style="padding:auto;width:1000px;">
+        <label class="col-form-label">Password:</label>  
+        <div>  
+          {{ form.pwd }}  
+        </div>  
+      </div>
+    </div>
+  <div class="form-group row" style="text-align: center">  
+      <div style="padding:auto;width:1000px;">
+        <label class="col-form-label">Types:</label>  
+        <div>  
+          {{ form.types }}  
+        </div>  
+      </div>
+    </div>
+    <div class="form-group row" style="text-align: center">  
+      <div style="padding:auto;width:1000px;">
+        <div>  
+          <button type="submit" class="btn btn-success">Sign Up</button> 
+          <a class="btn btn-primary" href="/" role="button">Log In</a> 
+        </div>  
+      </div>
+    </div>
+  </div>
+</form>  
+</body>  
+</html>  

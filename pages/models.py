@@ -7,3 +7,5 @@ class LogIn(models.Model):
 	pwd=models.CharField(max_length=100)
 	class Meta:  
 		db_table = "pages"
+	def __str__(self):
+		return self.uId

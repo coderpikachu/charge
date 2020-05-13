@@ -1,40 +1,47 @@
 <!DOCTYPE html>  
 <html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <title>Dormitory Records</title>  
-     {% load static %}  
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
-</head>  
-<body>  
-<table class="table table-striped table-bordered table-sm">  
-    <thead class="thead-dark">  
-    <tr>  
-        <th>ID</th>  
-        <th>PeopleNum</th>  
-        <th>AccommodationCharge</th>  
-        <th>Telephone</th>  
-        <th>FlatId</th>  
-    </tr>  
-    </thead>  
-    <tbody>  
-{% for dormi in dormitories %}  
-    <tr>  
-        <td>{{ dormi.dId }}</td>  
-        <td>{{ dormi.peopleNum }}</td>  
-        <td>{{ dormi.accommodationCharge }}</td>  
-        <td>{{ dormi.telephone }}</td>  
-        <td>{{ dormi.flatId }}</td>
-        <td>  
-            <a href="/dormitory/edit/{{ dormi.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/dormitory/delete/{{ dormi.id }}">Delete</a>  
-        </td>  
-    </tr>  
-{% endfor %}  
-    </tbody>  
-</table>  
-<br>  
-<br>  
-<center><a href="/dormitory/dor" class="btn btn-primary">Add New Record</a></center>  
-</body>  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>Dormitory Records</title>  
+         {% load static %}  
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+    </head>  
+    <body>  
+        <table class="table table-striped table-bordered table-sm">  
+            <thead class="thead-dark">  
+                <tr>  
+                    <th>ID</th>  
+                    <th>PeopleNum</th>  
+                    <th>AccommodationCharge</th>  
+                    <th>Telephone</th>  
+                    <th>FlatId</th>  
+                </tr>  
+            </thead>  
+            <tbody>  
+            {% for dormi in object_list %}  
+                <tr>  
+                    <td>{{ dormi.dId }}</td>  
+                    <td>{{ dormi.peopleNum }}</td>  
+                    <td>{{ dormi.accommodationCharge }}</td>  
+                    <td>{{ dormi.telephone }}</td>  
+                    <td>{{ dormi.flatId.fId }}</td>
+                    <td>  
+                        <a href="../../dormitory/edit/{{ dormi.dId }}/"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                        <a href="../../dormitory/delete/{{ dormi.dId }}/">Delete</a>  
+                    </td>  
+                </tr>  
+            {% endfor %}  
+            </tbody>  
+        </table>  
+        <br>  
+        <br>  
+        
+        <center>
+            <a href="../../dormitory/dor/" class="btn btn-primary">Add New Record</a>
+        </center>  
+
+        <center>
+            <a href="../../home/" class="btn btn-primary">Back To Home</a>
+        </center>
+    </body>  
 </html>  

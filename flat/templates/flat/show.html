@@ -17,15 +17,15 @@
     </tr>  
     </thead>  
     <tbody>  
-{% for fla in flats %}  
+{% for fla in object_list %}  
     <tr>  
         <td>{{ fla.fId }}</td>  
         <td>{{ fla.layers }}</td>  
         <td>{{ fla.roomNum }}</td>  
         <td>{{ fla.openTime }}</td>  
         <td>  
-            <a href="/flat/edit/{{ fla.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/flat/delete/{{ fla.id }}">Delete</a>  
+            <a href="../flat/edit/{{ fla.fId }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="../flat/delete/{{ fla.fId }}">Delete</a>  
         </td>  
     </tr>  
 {% endfor %}  
@@ -33,6 +33,7 @@
 </table>  
 <br>  
 <br>  
-<center><a href="/flat/fl" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="../flat/fl" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="../home" class="btn btn-primary">Back To Home</a></center>
 </body>  
 </html>  
