@@ -4,18 +4,21 @@
     <meta charset="UTF-8">  
     <title>Navigation</title>  
      {% load static %}  
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
 </head>  
-<body>  
-<br>  
-<br>  
-<a href="../user/show" class="btn btn-primary">User Management</a>
-<center><a href="../student/show" class="btn btn-primary">Student</a></center>  
-<center><a href="../flat/show" class="btn btn-primary">Flat</a></center>  
-<center><a href="../dormitory/show" class="btn btn-primary">Dormitory</a></center>  
-<center><a href="../charge/show" class="btn btn-primary">Charge</a></center>  
-<br>
-<br>
-<center><a href="../../../" class="btn btn-primary">Log Out</a></center>  
+<body style="position: relative;">  
+	{%include 'pages/navbar.html' %}
+	<center>
+	<a class="btn btn-info" href="../user/show" role="button" style='margin-top: 30px'>User</a>
+	<br>
+	<a class="btn btn-info" href="../student/show" role="button" style='margin-top: 30px'>Student</a>
+	<br>
+	<a class="btn btn-info" href="../dormitory/show" role="button" style='margin-top: 30px'>Dormitory</a>
+	<br>
+	<a class="btn btn-info" href="../flat/show" role="button" style='margin-top: 30px'>Flat</a>
+	<br>
+	<a class="btn btn-info" href="../charge/show" role="button" style='margin-top: 30px'>Charge</a>
+	</center>
 </body>  
 </html>  

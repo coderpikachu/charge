@@ -4,17 +4,20 @@
         <meta charset="UTF-8">  
         <title>Dormitory Records</title>  
          {% load static %}  
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
     </head>  
     <body>  
+        {%include 'pages/navbar.html'%}
         <table class="table table-striped table-bordered table-sm">  
-            <thead class="thead-dark">  
+            <thead class="thead-light">  
                 <tr>  
                     <th>ID</th>  
                     <th>PeopleNum</th>  
                     <th>AccommodationCharge</th>  
                     <th>Telephone</th>  
                     <th>FlatId</th>  
+                    <th>Operation</th>
                 </tr>  
             </thead>  
             <tbody>  
@@ -26,8 +29,10 @@
                     <td>{{ dormi.telephone }}</td>  
                     <td>{{ dormi.flatId.fId }}</td>
                     <td>  
-                        <a href="../../dormitory/edit/{{ dormi.dId }}/"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-                        <a href="../../dormitory/delete/{{ dormi.dId }}/">Delete</a>  
+                        <center>
+                        <a class="btn btn-info" href="../../dormitory/edit/{{ dormi.dId }}/" role="button" >Edit</a> 
+                        <a class="btn btn-warning" href="../../dormitory/delete/{{ dormi.dId }}/" role="button" style='margin-left: 60px'>Delete</a>
+                        </center>  
                     </td>  
                 </tr>  
             {% endfor %}  
@@ -37,11 +42,11 @@
         <br>  
         
         <center>
-            <a href="../../dormitory/dor/" class="btn btn-primary">Add New Record</a>
+            <a href="../../dormitory/dor/ " style="margin-right: 60px" class="btn btn-primary">Add New Record</a>
+            <a href="../../home/" class="btn btn-secondary">Back To Home</a>
         </center>  
+        <br>
+        <br>
 
-        <center>
-            <a href="../../home/" class="btn btn-primary">Back To Home</a>
-        </center>
     </body>  
 </html>  

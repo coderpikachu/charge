@@ -13,7 +13,8 @@ from django.views.generic import(
 from django.views.generic.edit import FormView
 # Create your models here.
 def home_view(request,my_id,my_pwd,*args,**kwargs):
-	return render(request,"pages/home.html",{'my_id':my_id,'my_pwd':my_pwd})
+    print(my_id)
+    return render(request,"pages/home.html",{'my_id':my_id,'my_pwd':my_pwd})
 
 class LogInView(FormView):
     template_name='LogIn.html'
