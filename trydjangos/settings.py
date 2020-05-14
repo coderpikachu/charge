@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'charges',
     'user',
     'pages',
-    'django_mysql'
+    'django_mysql',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

@@ -12,9 +12,9 @@ from django.views.generic import(
     )
 from django.views.generic.edit import FormView
 # Create your models here.
-def home_view(request,my_id,my_pwd,*args,**kwargs):
+def home_view(request,my_id,*args,**kwargs):
     print(my_id)
-    return render(request,"pages/home.html",{'my_id':my_id,'my_pwd':my_pwd})
+    return render(request,"pages/home.html",{'my_id':my_id})
 
 class LogInView(FormView):
     template_name='LogIn.html'
@@ -27,11 +27,9 @@ def logIn_view(request,*args,**kwargs):
         if form.is_valid():
             try:   
                 my_id=form.cleaned_data['uId']
-                my_pwd=form.cleaned_data['pwd']
-                print(f"{my_id}/{my_pwd}/home/")
-                print(User.objects.filter(uId=my_id,pwd=my_pwd).count())
-                if User.objects.filter(uId=my_id,pwd=my_pwd).count()>=1:
-                    return redirect(f"{my_id}/{my_pwd}/home/")  
+                print(User.objects.filter(uId=my_id).count())
+                if User.objects.filter(uId=my_id).count()>=1:
+                    return redirect(f"{my_id}/home/")  
 
             except:  
                 pass  
