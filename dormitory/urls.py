@@ -1,9 +1,9 @@
 from django.urls import path
-from dormitory import views
+from dormitory.views import *
 app_name='dormitory'
 urlpatterns=[
-	path('dor/', views.Create_View.as_view(),name='dor'),  
-	path('show/',views.dormitory_list,name='show'),  
-	path('edit/<int:id>/', views.Update_View.as_view(),name='edit'),  
-	path('delete/<int:id>/', views.Delete_View.as_view(),name='delete'),
+	path('create/', Create_View.as_view(),name='create'),  
+	path('filterList/',filterListView,name='filterList'),  
+	path('update/<int:id>/', Update_View.as_view(),name='update'),  
+	path('delete/<int:id>/', Delete_View.as_view(),name='delete'),
 ]

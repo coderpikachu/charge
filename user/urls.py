@@ -1,10 +1,9 @@
 from django.urls import path
-from user import views
+from user.views import *
 app_name='user'
 urlpatterns=[
-	path('u', views.u,name='u'),  
-	path('show',views.show,name='show'),  
-	path('edit/<int:id>', views.edit,name='edit'),  
-	path('update/<int:id>', views.update,name='update'),  
-	path('delete/<int:id>', views.destroy,name='delete'),
+	path('create/', Create_View.as_view(),name='create'),  
+	path('filterList/',filterListView,name='filterList'),  
+	path('update/<int:id>/', Update_View.as_view(),name='update'),  
+	path('delete/<int:id>/', Delete_View.as_view(),name='delete'),
 ]

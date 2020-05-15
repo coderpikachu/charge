@@ -1,7 +1,7 @@
 from flat.models import Flat
-from dormitory.models import Dormitory
 from django.db import models  
 from user.models import User
+from dormitory.models import Dormitory
 class Student(models.Model): 	
 	Male='M'
 	Female='F'

@@ -1,0 +1,19 @@
+<center>
+    <div class="container">
+        <div class='jumbotron'>
+            <form method="POST" class="post-form" action='.'>  
+                <div class="form-group">{% csrf_token %}  
+                    {% include 'pages/field.html' %}
+
+                    <div class="form-group">  
+                        <label class="col-form-label"></label>  
+                        <div>  
+                            <button type="submit" class="btn btn-primary">Submit</button>  
+                        </div>  
+                    </div>  
+
+                </div>
+            </form> 
+        </div>
+    </div>
+</center>

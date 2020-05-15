@@ -22,25 +22,25 @@ class User(Model):
 		default=Common,
 		)
 	# authority=JSONField()
-	student_add=BooleanField(default=True)
-	student_edit=BooleanField(default=True)
-	student_delete=BooleanField(default=True)
+	student_add=BooleanField()
+	student_edit=BooleanField()
+	student_delete=BooleanField()
 
-	flat_add=BooleanField(default=True)
-	flat_edit=BooleanField(default=True)
-	flat_delete=BooleanField(default=True)
+	flat_add=BooleanField()
+	flat_edit=BooleanField()
+	flat_delete=BooleanField()
 
-	dormitory_add=BooleanField(default=True)
-	dormitory_edit=BooleanField(default=True)
-	dormitory_delete=BooleanField(default=True)
+	dormitory_add=BooleanField()
+	dormitory_edit=BooleanField()
+	dormitory_delete=BooleanField()
 
-	charge_add=BooleanField(default=True)
-	charge_edit=BooleanField(default=True)
-	charge_delete=BooleanField(default=True)
+	charge_add=BooleanField()
+	charge_edit=BooleanField()
+	charge_delete=BooleanField()
 
-	user_add=BooleanField(default=True)
-	user_edit=BooleanField(default=True)
-	user_delete=BooleanField(default=True)
+	user_add=BooleanField()
+	user_edit=BooleanField()
+	user_delete=BooleanField()
 	class Meta:
 		db_table = "user"
 	def __str__(self):

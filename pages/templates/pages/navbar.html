@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand"style="color:green;font-weight: bold"href="http://localhost:8000/1/12/home/">Home</a>
+
+  <a class="navbar-brand"style="color:green;font-weight: bold"href="http://localhost:8000/{{my_id}}/home/">Home</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,36 +9,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
 
-      <!-- <li class="nav-item active"style="margin-left: 50px ; font-weight:bold">
-        <a class="nav-link" href="../dormitory/show">User</a>
-      </li>
-
-      <li class="nav-item active"style="margin-left: 50px">
-        <a class="nav-link" href="../dormitory/show">Student</a>
-      </li>
-
-      <li class="nav-item active"style="margin-left: 50px">
-        <a class="nav-link" href="../dormitory/show">Dormitory</a>
-      </li>
-
-      <li class="nav-item active"style="margin-left: 50px">
-        <a class="nav-link" href="../dormitory/show">Flat</a>
-      </li>
-
-      <li class="nav-item active" style="margin-left: 50px">
-        <a class="nav-link" href="../dormitory/show">Charge</a>
-      </li> -->
       <li class="nav-item active" style="position: absolute;top: 20px;right:200px">
         <strong><em><p class="user">User:  {{my_id}} </p></em></strong>
       </li>
+
       <li class="nav-item">
         <a class="btn btn-danger" href="http://localhost:8000/" role="button" style="position: absolute;top: 10px;right:20px">Log Out</a> 
       </li>
 
     </ul>
-
-     
-
-
   </div>
+  
 </nav>

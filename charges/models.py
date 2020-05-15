@@ -27,5 +27,9 @@ class Charges(models.Model):
 	money=models.DecimalField(decimal_places=2,max_digits=10)
 	class Meta:  
 		db_table = "charges"
+
 	def __str__(self):
 		return self.cId
+
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)

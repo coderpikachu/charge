@@ -1,0 +1,26 @@
+<center>
+    <form method="GET" class="post-form" action='.'>  
+        <div class="form-group">{% csrf_token %}  
+
+            {% for field in filter.form %}
+            <fieldset class="form-group">
+                <label class="control-label" for="id_{{ field.name }}">{{ field.label }}</label>
+                <div class="controls">
+                    {{ field }}
+                    <!-- <p class="help-text">{{ field.help_text }} </p> -->
+                </div>
+            </fieldset>
+            {% endfor %}
+
+            <div class="form-group">  
+                <label class="col-form-label"></label>  
+                <div>  
+                    <button type="submit" class="btn btn-primary">Search</button>  
+                </div>  
+            </div> 
+
+        </div>
+
+    </form> 
+    
+</center>
