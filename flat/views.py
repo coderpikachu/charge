@@ -33,6 +33,10 @@ class Create_View(CreateView):
         context['my_id']=self.my_id
         return context
 
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
+
     def form_valid(self,form,*args,**kwargs):
         string=str(self.request.get_full_path()).split('/')[1:3]
         val=User.objects.filter(uId=self.my_id).values()
@@ -65,6 +69,10 @@ class Update_View(UpdateView):
     def get_object(self):
         id_=self.kwargs.get("id")
         return get_object_or_404(Flat,uId=id_)
+
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
 
     def form_valid(self,form):
         return super().form_valid(form)

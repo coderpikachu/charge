@@ -33,9 +33,42 @@ class Create_View(CreateView):
         context['my_id']=self.my_id
         return context
 
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
+
     def form_valid(self,form,*args,**kwargs):
         string=str(self.request.get_full_path()).split('/')[1:3]
         val=User.objects.filter(uId=self.my_id).values()
+        return super().form_valid(form)
+
+class CreateOnly_View(CreateView):
+    template_name='student/createOnly.html'
+    form_class=StudentForm
+    queryset=Student.objects.all()
+    success_url='../../student/filterList/'
+    my_id=''
+    my_pwd=''
+    request=None
+    def get_initial(self,*args,**kwargs):
+        return { 'sId': self.my_id}
+    def get(self, request, *args, **kwargs):
+        self.my_id=kwargs['my_id']
+        return super().get(self,request,*args,**kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['my_id']=self.my_id
+        return context
+
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
+
+    def form_valid(self,form,*args,**kwargs):
+        string=str(self.request.get_full_path()).split('/')[1:3]
+        val=User.objects.filter(uId=self.my_id).values()
+        print(form)
         return super().form_valid(form)
 
 def filterListView(request,*args,**kwargs):
@@ -65,6 +98,11 @@ class Update_View(UpdateView):
     def get_object(self):
         id_=self.kwargs.get("id")
         return get_object_or_404(Student,sId=id_)
+
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
+        
 
     def form_valid(self,form):
         return super().form_valid(form)

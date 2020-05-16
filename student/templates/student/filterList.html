@@ -20,23 +20,24 @@
                 <th>Telephone</th>  
                 <th>FlatId</th>  
                 <th>DormitoryId</th>
+                <th>Operation</th>
             </tr>  
         </thead>  
         <tbody>  
             {% for obj in filter.qs %}  
                 <tr>  
                     <td class="id">{{ obj.sId }}</td>  
-                    <td>{{ obj.Name }}</td>  
+                    <td>{{ obj.name }}</td>  
                     <td>{{ obj.gender }}</td>  
                     <td>{{ obj.nation }}</td>  
                     <td>{{ obj.specialty }}</td>  
                     <td>{{ obj.classId }}</td>  
                     <td>{{ obj.telephone }}</td>  
                     <td>{{ obj.flatId.fId }}</td>
-                    <td>{{ obj.dormitoryId.fId }}</td>
+                    <td>{{ obj.dormitoryId.dId }}</td>
                     <td>  
                         <center>
-                            <a class="btn btn-info edits" href="../../student/update/{{ obj.sId }}/" role="button" >Edit</a> 
+                            <a class="btn btn-info edits {{obj.sId}}" href="../../student/update/{{ obj.sId }}/" role="button" >Edit</a> 
                             <a class="btn btn-warning deletes" href="../../student/delete/{{ obj.sId }}/" role="button">Delete</a>
                         </center>  
                     </td>  
@@ -44,9 +45,21 @@
             {% endfor %}  
         </tbody>  
     </table>  
-            
+    <br>
+    <br>
+    <br>
     <center>
-        <a href="../../student/create/ " class="btn btn-primary add">Add New Record</a>
+        <a href="../../student/createOnly/ " class="btn btn-outline-primary">Create Your Own Record</a>
+    </center>  
+            
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <a href="../../student/create/" class="btn btn-primary add">Add New Record</a>
         <a href="../../home/" class="btn btn-secondary">Back To Home</a>
     </center>  
     <br>
@@ -74,16 +87,24 @@
         addButton=$('.add')
         idE=$('.id')
         for (var i = 0; i < editButton.length; i++) {
-            if(!student_edit){
+            console.log(0)
+            if(student_edit=='False'){
                 editButton.eq(i).addClass('disabled')
                 
             }
-            if(!student_delete){
+            if(student_delete=='False'){
                 deleteButton.eq(i).addClass('disabled')
             }
         }
-        if(!student_add){
+
+        if(student_add=='False'){
             addButton.eq(0).addClass('disabled')
         }
+
+        var id="{{my_id}}";
+        console.log(id)
+
+        editButton=$('.'+id)
+        editButton.removeClass('disabled')
     </script>  
 {% endblock %}

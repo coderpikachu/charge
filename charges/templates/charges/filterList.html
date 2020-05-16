@@ -17,6 +17,7 @@
                 <th>DormitoryId</th>  
                 <th>ChargeDate</th>  
                 <th>Money</th>  
+                <th>Operation</th>
             </tr>  
         </thead>  
         <tbody>  
@@ -50,34 +51,32 @@
     
 {% block js %}
     <script type="text/javascript"> 
-        // var a = "{{types}}";
-        // console.log(a);
-        // console.log("connected") 
-        // var id="{{my_id}}";
-        // var charge_delete="{{charge_delete}}";
-        // var charge_edit="{{charge_edit}}";
-        // var charge_add="{{charge_add}}";
-        // console.log(id)
-        // console.log(charge_delete)
-        // console.log(charge_add)
-        // console.log(charge_edit)
-        // console.log($('.edits'))
-        // console.log($('.user').text().slice(6))
-        // editButton=$('.edits')
-        // deleteButton=$('.deletes')
-        // addButton=$('.add')
-        // idE=$('.id')
-        // for (var i = 0; i < editButton.length; i++) {
-        //     if(!charge_edit){
-        //         editButton.eq(i).addClass('disabled')
+        console.log("connected") 
+        var id="{{my_id}}";
+        var charge_delete="{{charge_delete}}";
+        var charge_edit="{{charge_edit}}";
+        var charge_add="{{charge_add}}";
+        console.log(id)
+        console.log(charge_delete)
+        console.log(charge_add)
+        console.log(charge_edit)
+        console.log($('.edits'))
+        console.log($('.user').text().slice(6))
+        editButton=$('.edits')
+        deleteButton=$('.deletes')
+        addButton=$('.add')
+        for (var i = 0; i < editButton.length; i++) {
+            if(charge_edit=='False'){
+                editButton.eq(i).addClass('disabled')
                 
-        //     }
-        //     if(!charge_delete){
-        //         deleteButton.eq(i).addClass('disabled')
-        //     }
-        // }
-        // if(!charge_add){
-        //     addButton.eq(0).addClass('disabled')
-        // }
+            }
+            if(charge_delete=='False'){
+                deleteButton.eq(i).addClass('disabled')
+            }
+        }
+        if(charge_add=='False'){
+            addButton.eq(0).addClass('disabled')
+        }
+        console.log('over')
     </script>  
 {% endblock %}

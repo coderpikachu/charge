@@ -22,18 +22,27 @@ class Create_View(CreateView):
     queryset=Dormitory.objects.all()
     success_url='../../dormitory/filterList/'
     my_id=''
-    my_pwd=''
     request=None
     def get(self, request, *args, **kwargs):
         self.my_id=kwargs['my_id']
-        print(args)
-        print(kwargs)
         return super().get(self,request,*args,**kwargs)
+
+    # def post(self,request,*args,**kwargs):
+    #     print(request.POST)
+    #     self.get(self,request,*args,**kwargs)
+    #     print(args)
+    #     print(kwargs)
+    #     #self.form_class.clean_peopleNum(form,1)
+    #     return self.form_valid(self,DormitoryForm(request.POST),*args,**kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['my_id']=self.my_id
         return context
+
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
 
     def form_valid(self,form,*args,**kwargs):
         string=str(self.request.get_full_path()).split('/')[1:3]
@@ -64,9 +73,14 @@ class Update_View(UpdateView):
         context['my_id']=self.my_id
         return context
 
+
     def get_object(self):
         id_=self.kwargs.get("id")
         return get_object_or_404(Dormitory,dId=id_)
+        
+    def form_invalid(self,form,*args,**kwargs):
+        self.my_id=str(self.request.get_full_path()).split('/')[1:2][0]
+        return super().form_invalid(form)
 
     def form_valid(self,form):
         return super().form_valid(form)

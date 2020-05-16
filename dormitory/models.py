@@ -12,3 +12,4 @@ class Dormitory(models.Model):
 		db_table = "dormitory"
 	def __str__(self):
 		return self.dId
+

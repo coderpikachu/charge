@@ -15,6 +15,7 @@
                 <th>Layers</th>  
                 <th>RoomNum</th>  
                 <th>OpenTime</th>  
+                <th>Operation</th>
             </tr>  
         </thead>  
         <tbody>  
@@ -64,15 +65,15 @@
         addButton=$('.add')
         idE=$('.id')
         for (var i = 0; i < editButton.length; i++) {
-            if(!flat_edit){
+            if(flat_edit=='False'){
                 editButton.eq(i).addClass('disabled')
                 
             }
-            if(!dormitory_delete){
+            if(dormitory_delete=='False'){
                 deleteButton.eq(i).addClass('disabled')
             }
         }
-        if(!flat_add){
+        if(flat_add=='False'){
             addButton.eq(0).addClass('disabled')
         }
     </script>  

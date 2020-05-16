@@ -67,15 +67,15 @@
         addButton=$('.add')
         idE=$('.id')
         for (var i = 0; i < editButton.length; i++) {
-            if(!dormitory_edit){
+            if(dormitory_edit=='False'){
                 editButton.eq(i).addClass('disabled')
                 
             }
-            if(!dormitory_delete){
+            if(dormitory_delete=='False'){
                 deleteButton.eq(i).addClass('disabled')
             }
         }
-        if(!dormitory_add){
+        if(dormitory_add=='False'){
             addButton.eq(0).addClass('disabled')
         }
     </script>  

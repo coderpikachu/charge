@@ -4,7 +4,8 @@
 {% endblock %}
 {% block body %}
 	<center>
-		<a class="btn btn-info" href="../user/filterList" role="button" style='margin-top: 30px'>User</a>
+		<a class="btn btn-info user_management" href="../user/filterList" role="button" 
+        style='margin-top: 30px' >User</a>
 		<br>
 		<a class="btn btn-info" href="../student/filterList" role="button" style='margin-top: 30px'>Student</a>
 		<br>
@@ -14,4 +15,13 @@
 		<br>
 		<a class="btn btn-info" href="../charges/filterList" role="button" style='margin-top: 30px'>Charge</a>
 	</center>
+{% endblock %}
+
+{% block js %}
+	<script type="text/javascript"> 
+        var a = "{{types}}";
+        if(a=='C'||a=='A'){
+            $('.user_management').addClass('invisible')
+        }
+    </script>  
 {% endblock %}

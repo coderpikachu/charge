@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+{% block title %}
+    <title>Create Student</title>
+{% endblock %}
+{% block body %}
+    {% include 'pages/update.html' %}
+{% endblock %}
+{% block js %}
+	<script type="text/javascript">
+		$('#id_sId').find('option').remove()
+		$('#id_sId').append('<option value="{{my_id}}">{{my_id}}</option>')
+	</script>
+{% endblock %}

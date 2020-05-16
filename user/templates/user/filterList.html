@@ -34,6 +34,7 @@
                 <th>UserAddAuthority</th>  
                 <th>UserEditAuthority</th>  
                 <th>UserDeleteAuthority</th>   
+                <th>Operation</th>
             </tr>  
         </thead>  
         <tbody>  
@@ -66,7 +67,7 @@
                     <td>  
                         <center>
                             <a class="btn btn-info edits" href="../../user/update/{{ obj.uId }}/" role="button" >Edit</a> 
-                            <a class="btn btn-warning deletes" href="../../user/delete/{{ obj.uId }}/" role="button">Delete</a>
+                            <a class="btn btn-warning deletes {{obj.uId}}" href="../../user/delete/{{ obj.uId }}/" role="button">Delete</a>
                         </center>  
                     </td>  
                 </tr>  
@@ -82,37 +83,11 @@
     <br> 
 
 {% endblock %}
-    
+
 {% block js %}
     <script type="text/javascript"> 
-        var a = "{{types}}";
-        console.log(a);
-        console.log("connected") 
         var id="{{my_id}}";
-        var user_delete="{{user_delete}}";
-        var user_edit="{{user_edit}}";
-        var user_add="{{user_add}}";
-        console.log(id)
-        console.log(user_delete)
-        console.log(user_add)
-        console.log(user_edit)
-        console.log($('.edits'))
-        console.log($('.user').text().slice(6))
-        editButton=$('.edits')
-        deleteButton=$('.deletes')
-        addButton=$('.add')
-        idE=$('.id')
-        for (var i = 0; i < editButton.length; i++) {
-            if(!user_edit){
-                editButton.eq(i).addClass('disabled')
-                
-            }
-            if(!user_delete){
-                deleteButton.eq(i).addClass('disabled')
-            }
-        }
-        if(!user_add){
-            addButton.eq(0).addClass('disabled')
-        }
+        deleteButton=$('.'+id)
+        deleteButton.addClass('disabled')
     </script>  
 {% endblock %}
